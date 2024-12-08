@@ -1,14 +1,22 @@
 import { useLoaderData } from "react-router-dom";
+import Category from "../category/Category";
 
 const MealCatagory = () => {
+    const categoriesData = useLoaderData();
+    console.log("working", categoriesData);
+    // Safely access categories
+    const categories = categoriesData?.categories || [];
 
-    const catagories = useLoaderData()
+    
+
     return (
         <div>
-            <h2> Our catagories :{catagories.length}</h2>
-            <div>
+            <h2>Our Categories: {categories.length}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
                 {
-                    catagories.map(catagorie=>)
+                    categories.map(categorie => (
+                        <Category key={categorie.idCategory} categorie={categorie} />
+                    ))
                 }
             </div>
         </div>
