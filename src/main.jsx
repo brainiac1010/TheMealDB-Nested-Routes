@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Components/Home/Home.jsx';
 import LatestMeals from './Components/Latest Meals/LatestMeals.jsx';
 import PopularIngredients from './Components/Popular Ingredients/PopularIngredients.jsx';
+import MealCatagory from './Components/MealCatagory/MealCatagory.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path:'/PopularIngredients',
         element:<PopularIngredients></PopularIngredients>
+      },
+      {
+        path:'/catagorys',
+        loader:()=>  fetch(`www.themealdb.com/api/json/v1/1/categories.php`),
+        element:<MealCatagory></MealCatagory>
       }
     ]
   },
