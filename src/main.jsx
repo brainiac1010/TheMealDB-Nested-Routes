@@ -16,10 +16,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/LatestMeals',
+        loader: ()=> fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast'),
         element: <LatestMeals></LatestMeals>,
       },
       {
         path: '/PopularIngredients',
+        loader:  ()=> fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list'),
         element: <PopularIngredients></PopularIngredients>,
       },
       {
@@ -29,9 +31,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/categories/:idCategory',
-        loader: ({ params }) =>
+        loader: ({params}) =>
           fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idCategory}`),
-        element: <CategoryDetails></CategoryDetails>,
+        element: <CategoryDetails></CategoryDetails>, 
       },
     ],
   },

@@ -4,8 +4,8 @@ const CategoryDetails = () => {
   const  meals  = useLoaderData(); 
  
 
-  const { idCategory, strCategory, strCategoryDescription } = meals || {};
-
+  const { idCategory, strCategory, strCategoryDescription } = meals ;
+  console.log("working ",strCategory);
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold">Details about Category: {strCategory}</h2>
@@ -16,3 +16,4 @@ const CategoryDetails = () => {
 };
 
 export default CategoryDetails;
+
