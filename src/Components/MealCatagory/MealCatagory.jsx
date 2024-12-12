@@ -3,7 +3,7 @@ import Category from "../category/Category";
 
 const MealCatagory = () => {
     const categoriesData = useLoaderData();
-    // console.log("working", categoriesData);
+ 
     
     const categories = categoriesData?.categories || [];
 

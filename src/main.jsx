@@ -8,6 +8,7 @@ import LatestMeals from './Components/Latest Meals/LatestMeals.jsx';
 import PopularIngredients from './Components/Popular Ingredients/PopularIngredients.jsx';
 import MealCatagory from './Components/MealCatagory/MealCatagory.jsx';
 import CategoryDetails from './Components/CategoryDetails/CategoryDetails.jsx';
+import Recipe from './Components/Recipe/Recipe.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,11 +31,16 @@ const router = createBrowserRouter([
         element: <MealCatagory></MealCatagory>,
       },
       {
-        path: '/categories/:idCategory',
-        loader: ({params}) =>
-          fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idCategory}`),
+        path: '/categories/:strCategory',
+        loader: ({params}) =>fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.strCategory}`),
         element: <CategoryDetails></CategoryDetails>, 
       },
+      {
+        path: '/categories/:idMeal',
+        loader: ({params}) =>fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idMeal}`),
+        element: <Recipe></Recipe>, 
+      },
+      
     ],
   },
 ]);
