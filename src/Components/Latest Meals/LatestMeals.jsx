@@ -20,7 +20,7 @@ const LatestMeals = () => {
                             />
                             <h2 className="text-2xl font-bold text-gray-700">{strMeal}</h2>
                             <p className="text-black mt-2 ">ID: {idMeal}</p>
-                            <Link>
+                            <Link to={`/LatestMeals/${meal.idMeal}`}>
                             <button className="bg-blue-700 text-white">Show details</button>
                             </Link>
                         </div>

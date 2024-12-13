@@ -27,7 +27,7 @@ const CategoryDetails = () => {
             />
             <h2 className="text-xl font-semibold mb-2 text-gray-800 ">{meal.strMeal}</h2>
             <p className="text-gray-600">Meal ID: {meal.idMeal}</p>
-            <Link to={`/categories/${meal.idMeal}`} className="mt-4">
+            <Link to={`/categories/${meal.strMeal}/${meal.idMeal}`} className="mt-4">
               <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
                 Meal Recipe
               </button>

@@ -21,6 +21,11 @@ const router = createBrowserRouter([
         element: <LatestMeals></LatestMeals>,
       },
       {
+        path: '/LatestMeals/:idMeal',
+        loader: ({params}) =>fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idMeal}`),
+        element: <Recipe></Recipe>,
+      },
+      {
         path: '/PopularIngredients',
         loader:  ()=> fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list'),
         element: <PopularIngredients></PopularIngredients>,
@@ -36,7 +41,7 @@ const router = createBrowserRouter([
         element: <CategoryDetails></CategoryDetails>, 
       },
       {
-        path: '/categories/:idMeal',
+        path: '/categories/:strCategory/:idMeal',
         loader: ({params}) =>fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.idMeal}`),
         element: <Recipe></Recipe>, 
       },
