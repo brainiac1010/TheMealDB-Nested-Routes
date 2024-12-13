@@ -5,16 +5,13 @@ const PopularIngredients = () => {
     const allIngredients = useLoaderData();
     const Ingredients = allIngredients.meals;
 
-   
     const filteredIngredients = Ingredients.filter(
         (ingredient) => ingredient.strDescription && ingredient.strDescription.trim() !== ""
     );
 
-    
     const [visibleCards, setVisibleCards] = useState(9);
     const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
-    
     const toggleDescription = (idIngredient) => {
         setExpandedDescriptions((prevState) => ({
             ...prevState,
@@ -23,11 +20,11 @@ const PopularIngredients = () => {
     };
 
     return (
-        <div className="">
-            <h2 className="p-4 font-semibold text-4xl">Popular Ingredients</h2>
-            <p className="mb-5">All popular ingredients will show here:</p>
+        <div>
+            <h2 className="p-4 font-semibold text-4xl text-blue-500">Popular Ingredients</h2> 
+            <p className="mb-5 text-gray-800">All popular ingredients will show here:</p> 
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {filteredIngredients.slice(0, visibleCards).map((ingredient) => {
                     const { idIngredient, strIngredient, strDescription } = ingredient;
                     const isExpanded = expandedDescriptions[idIngredient];
@@ -42,7 +39,7 @@ const PopularIngredients = () => {
                             </p>
                             <button
                                 onClick={() => toggleDescription(idIngredient)}
-                                className="text-whait hover:underline bg-blue-500 mt-5 "
+                                className="text-white hover:underline bg-blue-500 mt-5 px-4 py-2 rounded"
                             >
                                 {isExpanded ? "Read Less" : "Read More"}
                             </button>

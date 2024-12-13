@@ -1,4 +1,4 @@
-import { useLoaderData,Link } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 const LatestMeals = () => {
     const latestMeal = useLoaderData();
@@ -6,7 +6,7 @@ const LatestMeals = () => {
 
     return (
         <div>
-            <h2>Latest Meals</h2>
+            <h2 className="text-2xl font-bold text-blue-500 mb-4">Latest Meals</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {allmeal.map(meal => {
@@ -19,9 +19,9 @@ const LatestMeals = () => {
                                 className="w-full h-48 object-cover"
                             />
                             <h2 className="text-2xl font-bold text-gray-700">{strMeal}</h2>
-                            <p className="text-black mt-2 ">ID: {idMeal}</p>
+                            <p className="text-black mt-2">ID: {idMeal}</p>
                             <Link to={`/LatestMeals/${meal.idMeal}`}>
-                            <button className="bg-blue-700 text-white">Show details</button>
+                                <button className="bg-blue-700 text-white px-4 py-2 rounded mt-4">Show details</button>
                             </Link>
                         </div>
                     );

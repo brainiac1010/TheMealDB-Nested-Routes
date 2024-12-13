@@ -1,11 +1,10 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const Recipe = () => {
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
     const recipesData = useLoaderData();
     const recipes = recipesData.meals[0];
-    console.log(recipes);
-
+    
     const {
         strArea,
         strCategory,
@@ -35,7 +34,6 @@ const Recipe = () => {
 
     return (
         <div className="container mx-auto p-6">
-            
             <button
                 onClick={() => navigate(-1)}
                 className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-200"
@@ -44,7 +42,6 @@ const Recipe = () => {
             </button>
 
             <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-                
                 <div className="w-full h-64 sm:h-72 md:h-96 lg:h-80 relative">
                     <img
                         src={strMealThumb}
