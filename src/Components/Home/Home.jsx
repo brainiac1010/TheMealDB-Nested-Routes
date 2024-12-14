@@ -17,7 +17,7 @@ const Home = () => {
         <div
             className="flex flex-col min-h-screen bg-cover bg-center"
             style={{
-                backgroundImage: 'url("https://your-image-url.com/path/to/your/image.jpg")',
+                backgroundImage: 'url("https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg")',
             }}
         >
             <Header />

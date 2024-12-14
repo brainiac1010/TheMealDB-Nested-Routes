@@ -9,6 +9,10 @@ const Header = () => {
                 </span>
 
                 <nav className="pl-4 space-x-6 text-lg">
+
+
+
+               
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
@@ -19,6 +23,17 @@ const Header = () => {
                     >
                         Home
                     </NavLink>
+
+                    <NavLink
+                        to="/categories"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "text-yellow-400 font-semibold"
+                                : "text-white hover:text-yellow-300 transition-colors"
+                        }
+                    >
+                        Categories
+                    </NavLink>
                     <NavLink
                         to="/LatestMeals"
                         className={({ isActive }) =>
@@ -27,7 +42,7 @@ const Header = () => {
                                 : "text-white hover:text-yellow-300 transition-colors"
                         }
                     >
-                        Latest Meals
+                        LatestMeals
                     </NavLink>
                     <NavLink
                         to="/PopularIngredients"
@@ -39,16 +54,7 @@ const Header = () => {
                     >
                        Ingredients
                     </NavLink>
-                    <NavLink
-                        to="/categories"
-                        className={({ isActive }) =>
-                            isActive
-                                ? "text-yellow-400 font-semibold"
-                                : "text-white hover:text-yellow-300 transition-colors"
-                        }
-                    >
-                        Categories
-                    </NavLink>
+                   
                 </nav>
             </div>
         </header>
